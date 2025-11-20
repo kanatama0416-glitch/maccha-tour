@@ -49,7 +49,7 @@
       padding: 0 16px;
     }
 
-    /* ナビゲーション（スマホはロゴ＋1ボタンだけ） */
+    /* ナビゲーション */
     header {
       position: sticky;
       top: 0;
@@ -87,17 +87,21 @@
       display: none;
     }
 
-    /* =========================
-       HERO（ここに fuji.jpg を敷く）
-       ========================= */
+    /* ===== HERO（ここに fuji.jpg を敷く） ===== */
     .hero {
       min-height: 75vh;
       display: flex;
       align-items: center;
-      background:
-        linear-gradient(140deg, rgba(245,243,238,0.96), rgba(245,243,238,0.7)),
-        url("image/fuji.jpg") center/cover no-repeat;
       border-bottom: 1px solid var(--line);
+
+      /* 背景色＋画像 */
+      background-color: #f5f3ee;
+      background-image:
+        linear-gradient(140deg, rgba(245,243,238,0.85), rgba(245,243,238,0.55)),
+        url("https://kanatama0416-glitch.github.io/maccha-tour/image/fuji.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero-inner {
@@ -175,7 +179,7 @@
       margin-top: 10px;
     }
 
-    /* セクション共通（スマホ） */
+    /* セクション共通 */
     section {
       padding: 36px 0;
     }
@@ -202,7 +206,7 @@
       margin-bottom: 18px;
     }
 
-    /* コンセプト */
+    /* Concept */
     .concept-grid {
       display: flex;
       flex-direction: column;
@@ -251,7 +255,6 @@
         url("tea-field-placeholder.jpg") center/cover no-repeat;
     }
 
-    /* Concept PC レイアウト */
     @media (min-width: 768px) {
       .concept-grid {
         display: grid;
@@ -269,7 +272,6 @@
       }
     }
 
-    /* スマホの concept-photo */
     @media (max-width: 767px) {
       .concept-photo {
         height: 180px;
@@ -279,7 +281,7 @@
       }
     }
 
-    /* 体験の流れ（タイムライン） */
+    /* Timeline */
     .timeline {
       margin-top: 8px;
     }
@@ -343,7 +345,6 @@
       );
     }
 
-    /* 最後の要素の下は線を消す */
     .timeline-item:last-child .timeline-line {
       display: none;
     }
@@ -429,7 +430,7 @@
       margin-bottom: 4px;
     }
 
-    /* Info（スマホは1カラム） */
+    /* Info */
     .info-cols {
       display: flex;
       flex-direction: column;
@@ -663,11 +664,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE（元のまま） -->
-  <!-- 以下、experience / value / voices / info セクションは
-       さっきまで動いていた HTML をそのまま貼り付けてOK -->
-
-  <!-- ここから下は、あなたが使っていた元のコードと同じです -->
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="wrapper">
