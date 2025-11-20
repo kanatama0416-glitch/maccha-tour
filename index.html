@@ -30,7 +30,7 @@
       background: var(--bg);
       color: var(--fg);
       line-height: 1.8;
-      font-size: 16px; /* モバイル前提で少し大きく */
+      font-size: 16px;
     }
 
     a {
@@ -49,7 +49,7 @@
       padding: 0 16px;
     }
 
-    /* ナビゲーション（スマホはロゴ＋1ボタンだけ） */
+    /* ナビゲーション */
     header {
       position: sticky;
       top: 0;
@@ -84,24 +84,24 @@
     }
 
     .nav-links {
-      display: none; /* PCのみ表示（後ろのメディアクエリで上書き） */
+      display: none;
     }
 
-    /* HERO */
+    /* HERO：ここに背景画像を設定 */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
 
-
-.hero {
-  min-height: 75vh;
-  display: flex;
-  align-items: center;
-  background:
-    /* 上にうすいベージュのグラデーション */
-    linear-gradient(140deg, rgba(245,243,238,0.96), rgba(245,243,238,0.7)),
-    /* 下にローカル画像（画像/富士山.jpg） */
-    url("image/fuji.jpg") center/cover no-repeat;
-  border-bottom: 1px solid var(--line);
-}
-
+      /* 画像 ＋ 半透明グラデーション */
+      background-image:
+        linear-gradient(140deg, rgba(245,243,238,0.92), rgba(245,243,238,0.6)),
+        url("./image/fuji.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
     .hero-inner {
       padding: 40px 0 50px;
@@ -178,7 +178,7 @@
       margin-top: 10px;
     }
 
-    /* セクション共通（スマホ） */
+    /* セクション共通 */
 
     section {
       padding: 36px 0;
@@ -206,7 +206,7 @@
       margin-bottom: 18px;
     }
 
-    /* コンセプト（スマホは縦並び） */
+    /* コンセプト */
 
     .concept-grid {
       display: flex;
@@ -247,165 +247,116 @@
       background: rgba(255,255,255,0.9);
     }
 
-.concept-photo {
-  aspect-ratio: 4 / 5;
-  border-radius: 18px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 10% 0, rgba(255,255,255,0.9), transparent 70%),
-    url("image/fuji.jpg") center/cover no-repeat;
-}
-
-        
+    /* コンセプト画像：同じ富士画像を使用 */
+    .concept-photo {
+      aspect-ratio: 4 / 5;
+      border-radius: 18px;
+      overflow: hidden;
+      background-image:
+        radial-gradient(circle at 10% 0, rgba(255,255,255,0.9), transparent 70%),
+        url("./image/fuji.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-    /* --- Concept layout PC版のレイアウト修正 --- */
-@media (min-width: 768px) {
-  .concept-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr; /* 左テキスト：右画像 */
-    gap: 32px;
-    align-items: start;
-  }
 
-  .concept-photo {
-    width: 100%;
-    height: 320px;             /* 画像の縦の高さをコンパクトに */
-    border-radius: 16px;
-    background-size: cover;
-    background-position: center;
-  }
-}
-/* スマホ（〜767px）は画像を小さくする */
-@media (max-width: 767px) {
-  .concept-photo {
-    height: 180px;      /* ← 好きな高さに調整してOK */
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-  }
-}
+    /* 体験の流れ（タイムライン） */
 
-/* 体験の流れ（アイコン＋点線タイムライン） */
+    .timeline {
+      margin-top: 8px;
+    }
 
-.timeline {
-  margin-top: 8px;
-}
+    .timeline-intro {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
 
-.timeline-intro {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
+    .timeline-note {
+      font-size: 12px;
+      color: #7a7569;
+      margin-bottom: 16px;
+    }
 
-.timeline-note {
-  font-size: 12px;
-  color: #7a7569;
-  margin-bottom: 16px;
-}
+    .timeline-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-.timeline-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+    .timeline-item {
+      display: flex;
+      gap: 12px;
+    }
 
-/* 1行ごとのブロック */
-.timeline-item {
-  display: flex;
-  gap: 12px;
-}
+    .timeline-marker {
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
 
-/* --- アイコンを大きく、見やすくする --- */
+    .timeline-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-soft);
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--accent);
+    }
 
-/* 左側：アイコンと点線の縦レイアウト */
-.timeline-marker {
-  width: 40px;          /* ← アイコンが大きくなる分、横幅も少し広げる */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-}
+    .timeline-line {
+      flex: 1;
+      width: 2px;
+      margin-top: 6px;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(123, 155, 122, 0.7) 0,
+        rgba(123, 155, 122, 0.7) 4px,
+        transparent 4px,
+        transparent 8px
+      );
+    }
 
-/* 丸アイコン本体 */
-.timeline-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--accent-soft);
-  background: rgba(255, 255, 255, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;       /* ← 絵文字を大きく */
-  color: var(--accent);
-}
+    .timeline-item:last-child .timeline-line {
+      display: none;
+    }
 
-/* 点線はそのままでOK（必要なら微調整可） */
-.timeline-line {
-  flex: 1;
-  width: 2px;
-  margin-top: 6px;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(123, 155, 122, 0.7) 0,
-    rgba(123, 155, 122, 0.7) 4px,
-    transparent 4px,
-    transparent 8px
-  );
-}
+    .timeline-content {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+    }
 
-}
-/* 最後の要素の下は線を消す */
-.timeline-item:last-child .timeline-line {
-  display: none;
-}
+    .timeline-time {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #878173;
+      margin-bottom: 2px;
+    }
 
-/* 右側：テキスト部分 */
-.timeline-content {
-  flex: 1;
-  padding: 8px 10px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.96);
-}
+    .timeline-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
 
-.timeline-time {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #878173;
-  margin-bottom: 2px;
-}
+    .timeline-body {
+      font-size: 13px;
+      color: #565148;
+    }
 
-.timeline-title {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.timeline-body {
-  font-size: 13px;
-  color: #565148;
-}
-
-/* PC幅で少しだけ余裕を持たせる */
-@media (min-width: 768px) {
-  .timeline {
-    max-width: 760px;
-  }
-
-  .timeline-content {
-    padding: 10px 14px;
-  }
-}
-
-
-
-
-
-    /* Value（スマホは縦一列） */
+    /* Value */
 
     .value-grid {
       display: flex;
@@ -451,7 +402,7 @@
       margin-bottom: 4px;
     }
 
-    /* Info（スマホは1カラム） */
+    /* Info */
 
     .info-cols {
       display: flex;
@@ -507,8 +458,6 @@
       background: #2f4930;
     }
 
-    /* フッター */
-
     footer {
       padding: 18px 0 24px;
       font-size: 11px;
@@ -516,7 +465,7 @@
       border-top: 1px solid var(--line);
     }
 
-    /* ─ PC向けのちょい強化レイアウト ───────────────── */
+    /* PC向けレイアウト */
 
     @media (min-width: 768px) {
       .wrapper {
@@ -608,6 +557,14 @@
         display: grid;
         grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr);
       }
+
+      .timeline {
+        max-width: 760px;
+      }
+
+      .timeline-content {
+        padding: 10px 14px;
+      }
     }
   </style>
 </head>
@@ -616,10 +573,7 @@
 <header>
   <div class="nav">
     <div class="nav-logo">FUJI MATCHA DAY</div>
-    <!-- スマホ用：すぐ申込に飛べるボタン -->
     <a href="#info" class="nav-cta">詳細を見る</a>
-
-    <!-- PC用ナビゲーション -->
     <nav class="nav-links">
       <a href="#concept">Concept</a>
       <a href="#experience">Experience</a>
@@ -703,151 +657,150 @@
   </section>
 
   <!-- EXPERIENCE -->
-<section id="experience">
-  <div class="wrapper">
-    <h2 class="section-heading">Experience</h2>
-    <div class="section-subheading">当日のながれ（予定）</div>
+  <section id="experience">
+    <div class="wrapper">
+      <h2 class="section-heading">Experience</h2>
+      <div class="section-subheading">当日のながれ（予定）</div>
 
-    <div class="timeline">
-      <p class="timeline-intro">
-        東京から富士市へ向かい、茶畑・工場・茶室をめぐる日帰りツアーです。<br>
-        各シーンごとに、ゆっくり写真や会話の時間も取る予定です。
-      </p>
-      <p class="timeline-note">
-        ※ 時間は目安です。交通状況や天候により前後する場合があります。
-      </p>
+      <div class="timeline">
+        <p class="timeline-intro">
+          東京から富士市へ向かい、茶畑・工場・茶室をめぐる日帰りツアーです。<br>
+          各シーンごとに、ゆっくり写真や会話の時間も取る予定です。
+        </p>
+        <p class="timeline-note">
+          ※ 時間は目安です。交通状況や天候により前後する場合があります。
+        </p>
 
-      <ul class="timeline-list">
-        <li class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-icon">🚐</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-time">08:30 – TOKYO</div>
-            <div class="timeline-title">東京出発（車移動）</div>
-            <div class="timeline-body">
-              集合後、車で富士市へ向かいます。道中で簡単にツアーの流れをご紹介します。
+        <ul class="timeline-list">
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🚐</div>
+              <div class="timeline-line"></div>
             </div>
-          </div>
-        </li>
-
-        <li class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-icon">🌿</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-time">10:30 – FUJI</div>
-            <div class="timeline-title">富士山麓でひと息</div>
-            <div class="timeline-body">
-              茶畑の見える場所で、軽いストレッチや深呼吸。富士山麓の空気を感じながらリセットします。
+            <div class="timeline-content">
+              <div class="timeline-time">08:30 – TOKYO</div>
+              <div class="timeline-title">東京出発（車移動）</div>
+              <div class="timeline-body">
+                集合後、車で富士市へ向かいます。道中で簡単にツアーの流れをご紹介します。
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-icon">🍃</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-time">11:00 – TEA FIELDS</div>
-            <div class="timeline-title">茶畑ウォーク</div>
-            <div class="timeline-body">
-              有機栽培の茶畑を歩きながら、土や風、香りを全身で感じます。
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🌿</div>
+              <div class="timeline-line"></div>
             </div>
-          </div>
-        </li>
+            <div class="timeline-content">
+              <div class="timeline-time">10:30 – FUJI</div>
+              <div class="timeline-title">富士山麓でひと息</div>
+              <div class="timeline-body">
+                茶畑の見える場所で、軽いストレッチや深呼吸。富士山麓の空気を感じながらリセットします。
+              </div>
+            </div>
+          </li>
 
-        <li class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-icon">🏭</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-time">11:30 – FACTORY</div>
-            <div class="timeline-title">お茶工場見学</div>
-            <div class="timeline-body">
-              茶葉が抹茶になるまでの工程を、実際の設備を見ながら学びます。
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🍃</div>
+              <div class="timeline-line"></div>
             </div>
-          </div>
-        </li>
+            <div class="timeline-content">
+              <div class="timeline-time">11:00 – TEA FIELDS</div>
+              <div class="timeline-title">茶畑ウォーク</div>
+              <div class="timeline-body">
+                有機栽培の茶畑を歩きながら、土や風、香りを全身で感じます。
+              </div>
+            </div>
+          </li>
 
-        <li class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-icon">🌀</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-time">12:15 – STONE MILL</div>
-            <div class="timeline-title">石臼で抹茶挽き</div>
-            <div class="timeline-body">
-              一人ずつ石臼を挽き、自分の手で抹茶をつくります。挽いた抹茶はお土産としてお持ち帰りいただけます。
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🏭</div>
+              <div class="timeline-line"></div>
             </div>
-          </div>
-        </li>
+            <div class="timeline-content">
+              <div class="timeline-time">11:30 – FACTORY</div>
+              <div class="timeline-title">お茶工場見学</div>
+              <div class="timeline-body">
+                茶葉が抹茶になるまでの工程を、実際の設備を見ながら学びます。
+              </div>
+            </div>
+          </li>
 
-        <li class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-icon">🍽</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-time">13:00 – LUNCH</div>
-            <div class="timeline-title">ランチタイム</div>
-            <div class="timeline-body">
-              富士市周辺の食材や、お茶を使った軽めのランチを予定しています。
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🌀</div>
+              <div class="timeline-line"></div>
             </div>
-          </div>
-        </li>
+            <div class="timeline-content">
+              <div class="timeline-time">12:15 – STONE MILL</div>
+              <div class="timeline-title">石臼で抹茶挽き</div>
+              <div class="timeline-body">
+                一人ずつ石臼を挽き、自分の手で抹茶をつくります。挽いた抹茶はお土産としてお持ち帰りいただけます。
+              </div>
+            </div>
+          </li>
 
-        <li class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-icon">🍵</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-time">14:00 – TEA ROOM</div>
-            <div class="timeline-title">茶室で一服</div>
-            <div class="timeline-body">
-              静かな茶室でお点前を拝見し、抹茶をいただきます。畑・工場・石臼の体験が一杯の抹茶としてつながる時間です。
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🍽</div>
+              <div class="timeline-line"></div>
             </div>
-          </div>
-        </li>
+            <div class="timeline-content">
+              <div class="timeline-time">13:00 – LUNCH</div>
+              <div class="timeline-title">ランチタイム</div>
+              <div class="timeline-body">
+                富士市周辺の食材や、お茶を使った軽めのランチを予定しています。
+              </div>
+            </div>
+          </li>
 
-        <li class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-icon">📷</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-time">15:00 – FREE TIME</div>
-            <div class="timeline-title">写真・おしゃべりの時間</div>
-            <div class="timeline-body">
-              茶畑や富士山を背景に写真撮影をしたり、茶師・スタッフとの会話を楽しめます。
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🍵</div>
+              <div class="timeline-line"></div>
             </div>
-          </div>
-        </li>
+            <div class="timeline-content">
+              <div class="timeline-time">14:00 – TEA ROOM</div>
+              <div class="timeline-title">茶室で一服</div>
+              <div class="timeline-body">
+                静かな茶室でお点前を拝見し、抹茶をいただきます。畑・工場・石臼の体験が一杯の抹茶としてつながる時間です。
+              </div>
+            </div>
+          </li>
 
-        <li class="timeline-item">
-          <div class="timeline-marker">
-            <div class="timeline-icon">🚌</div>
-            <div class="timeline-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-time">16:00 – RETURN</div>
-            <div class="timeline-title">東京へ（振り返り）</div>
-            <div class="timeline-body">
-              帰りの車内で簡単なアンケートを行い、一日の感想を共有します。
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">📷</div>
+              <div class="timeline-line"></div>
             </div>
-          </div>
-        </li>
-      </ul>
+            <div class="timeline-content">
+              <div class="timeline-time">15:00 – FREE TIME</div>
+              <div class="timeline-title">写真・おしゃべりの時間</div>
+              <div class="timeline-body">
+                茶畑や富士山を背景に写真撮影をしたり、茶師・スタッフとの会話を楽しめます。
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🚌</div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-time">16:00 – RETURN</div>
+              <div class="timeline-title">東京へ（振り返り）</div>
+              <div class="timeline-body">
+                帰りの車内で簡単なアンケートを行い、一日の感想を共有します。
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- VALUE -->
   <section id="value">
@@ -879,7 +832,7 @@
     </div>
   </section>
 
-  <!-- VOICES（仮） -->
+  <!-- VOICES -->
   <section id="voices">
     <div class="wrapper">
       <h2 class="section-heading">Voices</h2>
@@ -954,12 +907,10 @@
               ※ 実験的なツアーのため、アンケートと簡単なインタビューへのご協力をお願いする予定です。
             </p>
 
-            <a href="#"
-               class="apply-button">
+            <a href="#" class="apply-button">
               参加申し込みフォームを開く
               <span style="font-size:14px;">↗</span>
             </a>
-            <!-- TODO: 上の href に実際のフォームURLを入れる -->
           </div>
         </div>
       </div>
@@ -975,4 +926,3 @@
 
 </body>
 </html>
-
