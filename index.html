@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>富士の静けさと、有機抹茶に浸る一日</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="富士山麓の茶畑・茶工場・茶室をめぐり、有機抹茶が生まれる一日を体験する少人数ツアー。">
+  <meta name="description" content="富士山麓の茶畑・抹茶工場・和菓子・和紙・サイクリング・お点前まで。富士の手しごとと有機抹茶を味わう少人数ツアー。">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -16,13 +16,8 @@
       --line: #d3cdbf;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -33,15 +28,8 @@
       font-size: 16px;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .wrapper {
       max-width: 1080px;
@@ -83,31 +71,25 @@
       color: var(--bg);
     }
 
-    .nav-links {
-      display: none;
-    }
+    .nav-links { display: none; }
 
-    /* ===== HERO（ここに fuji.jpg を敷く） ===== */
+    /* ===== HERO ===== */
     .hero {
       min-height: 75vh;
       display: flex;
       align-items: center;
       border-bottom: 1px solid var(--line);
 
-      /* 背景色＋画像 */
       background-color: #f5f3ee;
-background-image:
-  linear-gradient(140deg, rgba(245,243,238,0.25), rgba(245,243,238,0.15)),
-  url("https://kanatama0416-glitch.github.io/maccha-tour/image/fuji.jpg");
-
+      background-image:
+        linear-gradient(140deg, rgba(245,243,238,0.25), rgba(245,243,238,0.15)),
+        url("https://kanatama0416-glitch.github.io/maccha-tour/image/fuji.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    .hero-inner {
-      padding: 40px 0 50px;
-    }
+    .hero-inner { padding: 40px 0 50px; }
 
     .hero-kicker {
       font-size: 11px;
@@ -125,16 +107,8 @@ background-image:
       margin-bottom: 14px;
     }
 
-    .hero-sub {
-      font-size: 15px;
-      margin-bottom: 14px;
-    }
-
-    .hero-tag {
-      font-size: 13px;
-      color: #666257;
-      margin-bottom: 18px;
-    }
+    .hero-sub { font-size: 15px; margin-bottom: 14px; }
+    .hero-tag { font-size: 13px; color: #666257; margin-bottom: 18px; }
 
     .hero-pill-list {
       display: flex;
@@ -165,9 +139,7 @@ background-image:
       transition: background 0.25s ease, transform 0.15s ease;
     }
 
-    .hero-cta span.icon {
-      font-size: 16px;
-    }
+    .hero-cta span.icon { font-size: 16px; }
 
     .hero-cta:hover {
       background: #2f4930;
@@ -181,18 +153,10 @@ background-image:
     }
 
     /* セクション共通 */
-    section {
-      padding: 36px 0;
-    }
+    section { padding: 36px 0; }
 
-    /* ★ここを background-color に変更★ */
-    section:nth-of-type(odd) {
-      background-color: var(--bg);
-    }
-
-    section:nth-of-type(even) {
-      background-color: var(--bg-deep);
-    }
+    section:nth-of-type(odd) { background-color: var(--bg); }
+    section:nth-of-type(even) { background-color: var(--bg-deep); }
 
     .section-heading {
       font-family: "Noto Serif JP", serif;
@@ -215,13 +179,8 @@ background-image:
       gap: 20px;
     }
 
-    .concept-text {
-      font-size: 14px;
-    }
-
-    .concept-text p {
-      margin: 0 0 10px;
-    }
+    .concept-text { font-size: 14px; }
+    .concept-text p { margin: 0 0 10px; }
 
     .concept-bullets {
       margin: 10px 0 4px;
@@ -229,9 +188,7 @@ background-image:
       font-size: 14px;
     }
 
-    .concept-bullets li {
-      margin-bottom: 4px;
-    }
+    .concept-bullets li { margin-bottom: 4px; }
 
     .concept-tags {
       display: flex;
@@ -248,15 +205,14 @@ background-image:
       background: rgba(255,255,255,0.9);
     }
 
-.concept-photo {
-  aspect-ratio: 4 / 5;
-  border-radius: 18px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 10% 0, rgba(255,255,255,0.75), transparent 70%),
-    url("image/leaf.jpg") center/cover no-repeat;
-}
-
+    .concept-photo {
+      aspect-ratio: 4 / 5;
+      border-radius: 18px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 0, rgba(255,255,255,0.75), transparent 70%),
+        url("image/leaf.jpg") center/cover no-repeat;
+    }
 
     @media (min-width: 768px) {
       .concept-grid {
@@ -285,20 +241,9 @@ background-image:
     }
 
     /* Timeline */
-    .timeline {
-      margin-top: 8px;
-    }
-
-    .timeline-intro {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .timeline-note {
-      font-size: 12px;
-      color: #7a7569;
-      margin-bottom: 16px;
-    }
+    .timeline { margin-top: 8px; }
+    .timeline-intro { font-size: 14px; margin-bottom: 10px; }
+    .timeline-note { font-size: 12px; color: #7a7569; margin-bottom: 16px; }
 
     .timeline-list {
       list-style: none;
@@ -309,10 +254,7 @@ background-image:
       gap: 12px;
     }
 
-    .timeline-item {
-      display: flex;
-      gap: 12px;
-    }
+    .timeline-item { display: flex; gap: 12px; }
 
     .timeline-marker {
       width: 40px;
@@ -348,9 +290,7 @@ background-image:
       );
     }
 
-    .timeline-item:last-child .timeline-line {
-      display: none;
-    }
+    .timeline-item:last-child .timeline-line { display: none; }
 
     .timeline-content {
       flex: 1;
@@ -374,19 +314,11 @@ background-image:
       margin-bottom: 4px;
     }
 
-    .timeline-body {
-      font-size: 13px;
-      color: #565148;
-    }
+    .timeline-body { font-size: 13px; color: #565148; }
 
     @media (min-width: 768px) {
-      .timeline {
-        max-width: 760px;
-      }
-
-      .timeline-content {
-        padding: 10px 14px;
-      }
+      .timeline { max-width: 760px; }
+      .timeline-content { padding: 10px 14px; }
     }
 
     /* Value */
@@ -427,11 +359,7 @@ background-image:
       background: rgba(255,255,255,0.95);
     }
 
-    .voice-meta {
-      font-size: 11px;
-      color: #7a7569;
-      margin-bottom: 4px;
-    }
+    .voice-meta { font-size: 11px; color: #7a7569; margin-bottom: 4px; }
 
     /* Info */
     .info-cols {
@@ -441,10 +369,7 @@ background-image:
       font-size: 14px;
     }
 
-    .info-cols h3 {
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
+    .info-cols h3 { font-size: 15px; margin-bottom: 6px; }
 
     .info-cols ul {
       list-style: none;
@@ -452,14 +377,9 @@ background-image:
       margin: 0 0 6px;
     }
 
-    .info-cols li {
-      margin-bottom: 4px;
-    }
+    .info-cols li { margin-bottom: 4px; }
 
-    .info-label {
-      font-weight: 500;
-      margin-right: 4px;
-    }
+    .info-label { font-weight: 500; margin-right: 4px; }
 
     .apply-box {
       margin-top: 10px;
@@ -484,9 +404,7 @@ background-image:
       align-items: center;
     }
 
-    .apply-button:hover {
-      background: #2f4930;
-    }
+    .apply-button:hover { background: #2f4930; }
 
     footer {
       padding: 18px 0 24px;
@@ -497,21 +415,10 @@ background-image:
 
     /* PC向けレイアウト */
     @media (min-width: 768px) {
-      .wrapper {
-        padding: 0 20px;
-      }
-
-      .nav {
-        padding: 10px 20px;
-      }
-
-      .nav-logo {
-        font-size: 16px;
-      }
-
-      .nav-cta {
-        display: none;
-      }
+      .wrapper { padding: 0 20px; }
+      .nav { padding: 10px 20px; }
+      .nav-logo { font-size: 16px; }
+      .nav-cta { display: none; }
 
       .nav-links {
         display: flex;
@@ -519,10 +426,7 @@ background-image:
         font-size: 13px;
       }
 
-      .nav-links a {
-        position: relative;
-        padding-bottom: 3px;
-      }
+      .nav-links a { position: relative; padding-bottom: 3px; }
 
       .nav-links a::after {
         content: "";
@@ -535,29 +439,14 @@ background-image:
         transition: width 0.25s ease;
       }
 
-      .nav-links a:hover::after {
-        width: 100%;
-      }
+      .nav-links a:hover::after { width: 100%; }
 
-      .hero {
-        min-height: 80vh;
-      }
+      .hero { min-height: 80vh; }
+      .hero-title { font-size: 32px; }
+      .hero-inner { padding: 60px 0 70px; }
 
-      .hero-title {
-        font-size: 32px;
-      }
-
-      .hero-inner {
-        padding: 60px 0 70px;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
-      .section-heading {
-        font-size: 22px;
-      }
+      section { padding: 60px 0; }
+      .section-heading { font-size: 22px; }
 
       .value-grid {
         display: grid;
@@ -578,8 +467,8 @@ background-image:
     }
   </style>
 </head>
-<body>
 
+<body>
 <header>
   <div class="nav">
     <div class="nav-logo">FUJI MATCHA DAY</div>
@@ -600,27 +489,29 @@ background-image:
   <section class="hero">
     <div class="wrapper">
       <div class="hero-inner">
-        <div class="hero-kicker">FUJI · MATCHA · ORGANIC</div>
+        <div class="hero-kicker">FUJI · MATCHA · CRAFT</div>
         <h1 class="hero-title">
           富士の静けさと、<br>
           有機抹茶に浸る一日。
         </h1>
         <p class="hero-sub">
-          富士山麓の茶畑・茶工場・茶室をめぐる、<br>
-          少人数のツアーです。
+          茶畑から抹茶づくり、和菓子・和紙・サイクリングまで。<br>
+          富士市の「手しごと」を、少人数で味わうツアーです。
         </p>
         <p class="hero-tag">
           「観光スポットをはしごする一日」ではなく、<br>
-          静かな時間と、抹茶が生まれる物語を味わう一日。
+          ひとつの土地に浸り、静かな体験を重ねていく一日。
         </p>
 
         <div class="hero-pill-list">
           <span class="hero-pill">少人数</span>
-          <span class="hero-pill">有機抹茶</span>
-          <span class="hero-pill">茶畑ウォーク</span>
-          <span class="hero-pill">工場見学</span>
-          <span class="hero-pill">石臼体験</span>
-          <span class="hero-pill">茶室で一服</span>
+          <span class="hero-pill">有機栽培</span>
+          <span class="hero-pill">抹茶づくり</span>
+          <span class="hero-pill">和菓子作り</span>
+          <span class="hero-pill">和紙づくり</span>
+          <span class="hero-pill">茶畑サイクリング</span>
+          <span class="hero-pill">カジュアルお点前</span>
+          <span class="hero-pill">祖国への手紙</span>
         </div>
 
         <a href="#info" class="hero-cta">
@@ -636,30 +527,28 @@ background-image:
   <section id="concept">
     <div class="wrapper">
       <h2 class="section-heading">Concept</h2>
-      <div class="section-subheading">「抹茶が一杯になるまで」を、まるごと体験。</div>
+      <div class="section-subheading">抹茶と、富士の手しごとに、静かに浸る。</div>
 
       <div class="concept-grid">
         <div class="concept-text">
           <p>
-            朝の茶畑を歩き、工場を見学し、自分の手で抹茶を挽き、茶室でいただく。<br>
-            抹茶が生まれる流れを、最初から最後までたどる一日です。
+            茶畑を歩き、工場を見て、抹茶を自分で挽く。<br>
+            そのあとに、和菓子をつくり、和紙をすき、夕日へ向けて茶畑を走る。<br>
+            一日の最後は、手漉き和紙で「祖国への手紙」を書いて、静かに閉じていきます。
           </p>
 
-          <ul class="concept-bullets">
-            <li>富士山麓の有機栽培の茶畑を歩く</li>
-            <li>茶葉が抹茶になる工場の中を見る</li>
-            <li>石臼で挽いた抹茶を、茶室で味わう</li>
-          </ul>
 
           <p>
-            大きな観光地を何ヶ所も回るというより、<br>
-            「一つのテーマをじっくり味わいたい人」に向いたツアーです。
+            たくさんの名所を回るより、<br>
+            「土地の空気と、手でつくる体験」をじっくり味わいたい人に向いたツアーです。
           </p>
 
           <div class="concept-tags">
-            <span class="tag-pill"># 富士山麓</span>
+            <span class="tag-pill"># 富士市</span>
             <span class="tag-pill"># 有機抹茶</span>
-            <span class="tag-pill"># 少人数ツアー</span>
+            <span class="tag-pill"># 和菓子</span>
+            <span class="tag-pill"># 和紙</span>
+            <span class="tag-pill"># 夕日サイクリング</span>
           </div>
         </div>
         <div class="concept-photo"></div>
@@ -675,52 +564,25 @@ background-image:
 
       <div class="timeline">
         <p class="timeline-intro">
-          東京から富士市へ向かい、茶畑・工場・茶室をめぐる日帰りツアーです。<br>
-          各シーンごとに、ゆっくり写真や会話の時間も取る予定です。
+          富士市周辺で、抹茶と手しごとを重ねていく一日です。<br>
+          それぞれの体験に、写真や会話の時間もゆっくり取る予定です。
         </p>
         <p class="timeline-note">
-          ※ 時間は目安です。交通状況や天候により前後する場合があります。
+          ※ 時間は目安です。交通状況や天候、受け入れ状況により前後する場合があります。<br>
+          ※ ランチ内容は現在検討中です。
         </p>
 
         <ul class="timeline-list">
-          <li class="timeline-item">
-            <div class="timeline-marker">
-              <div class="timeline-icon">🚙</div>
-              <div class="timeline-line"></div>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-time">08:30 – TOKYO</div>
-              <div class="timeline-title">東京出発（車移動）</div>
-              <div class="timeline-body">
-                集合後、車で富士市へ向かいます。道中で簡単にツアーの流れをご紹介します。
-              </div>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-marker">
-              <div class="timeline-icon">🌿</div>
-              <div class="timeline-line"></div>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-time">10:30 – FUJI</div>
-              <div class="timeline-title">富士山麓でひと息</div>
-              <div class="timeline-body">
-                茶畑の見える場所で、軽いストレッチや深呼吸。富士山麓の空気を感じながらリセットします。
-              </div>
-            </div>
-          </li>
-
           <li class="timeline-item">
             <div class="timeline-marker">
               <div class="timeline-icon">🍃</div>
               <div class="timeline-line"></div>
             </div>
             <div class="timeline-content">
-              <div class="timeline-time">11:00 – TEA FIELDS</div>
+              <div class="timeline-time">10:30 – 11:00</div>
               <div class="timeline-title">茶畑ウォーク</div>
               <div class="timeline-body">
-                有機栽培の茶畑を歩きながら、土や風、香りを全身で感じます。
+                有機栽培のこだわりを聞きながら、茶畑を散策します。（所要：約30分）
               </div>
             </div>
           </li>
@@ -731,24 +593,11 @@ background-image:
               <div class="timeline-line"></div>
             </div>
             <div class="timeline-content">
-              <div class="timeline-time">11:30 – FACTORY</div>
-              <div class="timeline-title">お茶工場見学</div>
+              <div class="timeline-time">11:00 – 12:30</div>
+              <div class="timeline-title">抹茶工場見学 & 微細機体験</div>
               <div class="timeline-body">
-                茶葉が抹茶になるまでの工程を、実際の設備を見ながら学びます。
-              </div>
-            </div>
-          </li>
-
-          <li class="timeline-item">
-            <div class="timeline-marker">
-              <div class="timeline-icon">🌀</div>
-              <div class="timeline-line"></div>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-time">12:15 – STONE MILL</div>
-              <div class="timeline-title">石臼で抹茶挽き</div>
-              <div class="timeline-body">
-                一人ずつ石臼を挽き、自分の手で抹茶をつくります。挽いた抹茶はお土産としてお持ち帰りいただけます。
+                工場を簡単に見学し説明を聞いたあと、微細機で抹茶を挽く体験を行います。<br>
+                挽いた抹茶は持ち帰り可能です。（所要：約1時間30分）
               </div>
             </div>
           </li>
@@ -759,10 +608,52 @@ background-image:
               <div class="timeline-line"></div>
             </div>
             <div class="timeline-content">
-              <div class="timeline-time">13:00 – LUNCH</div>
-              <div class="timeline-title">ランチタイム</div>
+              <div class="timeline-time">12:30 – 13:30</div>
+              <div class="timeline-title">ランチ</div>
               <div class="timeline-body">
-                富士市周辺の食材や、お茶を使った軽めのランチを予定しています。
+                ★検討中（富士市周辺の食材や、お茶に合う内容を想定しています）
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🍡</div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-time">13:30 – 14:30</div>
+              <div class="timeline-title">和菓子作り体験</div>
+              <div class="timeline-body">
+                田子の月さん（予定）より、和菓子を自分で作る特別体験。（所要：約1時間）
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">📜</div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-time">14:30 – 15:30</div>
+              <div class="timeline-title">和紙づくり体験</div>
+              <div class="timeline-body">
+                富士市の伝統的な手漉き和紙を体験。後の「祖国への手紙」にも使用します。（所要：約1時間）
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-marker">
+              <div class="timeline-icon">🚲</div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-time">15:30 – 16:00</div>
+              <div class="timeline-title">茶畑サイクリング（夕日スポットへ）</div>
+              <div class="timeline-body">
+                富士市の自然と絶景を楽しむサイクリング。（所要：約30分）
               </div>
             </div>
           </li>
@@ -773,41 +664,28 @@ background-image:
               <div class="timeline-line"></div>
             </div>
             <div class="timeline-content">
-              <div class="timeline-time">14:00 – TEA ROOM</div>
-              <div class="timeline-title">茶室で一服</div>
+              <div class="timeline-time">16:00 – 17:00</div>
+              <div class="timeline-title">お点前体験（※茶師なし）</div>
               <div class="timeline-body">
-                静かな茶室でお点前を拝見し、抹茶をいただきます。畑・工場・石臼の体験が一杯の抹茶としてつながる時間です。
+                カジュアルに抹茶のお点前を楽しみます。（所要：約1時間）
               </div>
             </div>
           </li>
 
           <li class="timeline-item">
             <div class="timeline-marker">
-              <div class="timeline-icon">📷</div>
+              <div class="timeline-icon">✉️</div>
               <div class="timeline-line"></div>
             </div>
             <div class="timeline-content">
-              <div class="timeline-time">15:00 – FREE TIME</div>
-              <div class="timeline-title">写真・おしゃべりの時間</div>
+              <div class="timeline-time">17:00 – 17:30</div>
+              <div class="timeline-title">クロージング</div>
               <div class="timeline-body">
-                茶畑や富士山を背景に写真撮影をしたり、茶師・スタッフとの会話を楽しめます。
+                手作り和紙で「祖国へ手紙を書く」時間。アンケートもここで実施します。（所要：約30分）
               </div>
             </div>
           </li>
 
-          <li class="timeline-item">
-            <div class="timeline-marker">
-              <div class="timeline-icon">🚙</div>
-              <div class="timeline-line"></div>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-time">16:00 – RETURN</div>
-              <div class="timeline-title">東京へ（振り返り）</div>
-              <div class="timeline-body">
-                帰りの車内で簡単なアンケートを行い、一日の感想を共有します。
-              </div>
-            </div>
-          </li>
         </ul>
       </div>
     </div>
@@ -821,51 +699,24 @@ background-image:
 
       <div class="value-grid">
         <div class="value-item">
-          <h3>五感で知る抹茶</h3>
+          <h3>抹茶を「つくる」体験</h3>
           <p>
-            茶畑の景色、工場の音や香り、石臼の手触り。<br>
-            一杯の抹茶の裏側にある「感覚」をまとめて体験できます。
+            茶畑の空気から工場、そして微細機で挽く体験まで。<br>
+            抹茶が“飲み物”になる前の物語を、自分の手でたどれます。
           </p>
         </div>
         <div class="value-item">
-          <h3>富士山麓の静けさ</h3>
+          <h3>富士の手しごとに触れる</h3>
           <p>
-            都会とはちがう、富士山麓ならではの静かな空気の中で、ゆっくり過ごす時間を味わえます。
+            和菓子づくり、和紙づくり、茶畑サイクリング。<br>
+            その土地の文化や暮らしの手触りを、静かに持ち帰れる一日です。
           </p>
         </div>
         <div class="value-item">
-          <h3>自分の手で挽いた一杯</h3>
+          <h3>富士市の方、同じ海外にルーツを持つ方との交流</h3>
           <p>
-            自分で挽いた抹茶を持ち帰り、「ここで自分で作ったんだよ」と友だちに話せる体験になります。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VOICES -->
-  <section id="voices">
-    <div class="wrapper">
-      <h2 class="section-heading">Voices</h2>
-      <div class="section-subheading">（テスト実施後に掲載予定のイメージ）</div>
-
-      <div class="voices">
-        <div class="voice-card">
-          <div class="voice-meta">留学生・20代</div>
-          <p>
-            ただ抹茶を飲むだけでなく、「ここまでの工程があって一杯になる」と知れて、味わい方が変わりました。
-          </p>
-        </div>
-        <div class="voice-card">
-          <div class="voice-meta">留学生・20代</div>
-          <p>
-            茶畑の静けさと茶室の静けさがちがっていて面白かったです。富士山の近くで過ごす時間が、とても落ち着きました。
-          </p>
-        </div>
-        <div class="voice-card">
-          <div class="voice-meta">留学生・20代</div>
-          <p>
-            自分で挽いた抹茶をお土産にできて嬉しい。友だちに見せながらツアーの話をたくさんしました。
+            テスト。<br>
+            テスト。
           </p>
         </div>
       </div>
@@ -882,12 +733,11 @@ background-image:
         <div>
           <h3>基本情報</h3>
           <ul>
-            <li><span class="info-label">日程：</span>調整中（●月頃を予定）</li>
-            <li><span class="info-label">集合：</span>東京（詳細は参加者に個別案内）</li>
-            <li><span class="info-label">行き先：</span>静岡県富士市周辺（茶畑・お茶工場・茶室）</li>
-            <li><span class="info-label">対象：</span>日本文化や抹茶に興味のある留学生</li>
-            <li><span class="info-label">定員：</span>少人数（10名前後を想定）</li>
-            <li><span class="info-label">参加費：</span>未定（決まり次第ご案内）</li>
+            <li><span class="info-label">日程：</span>2026年1月14日（水）</li>
+            <li><span class="info-label">場所：</span>静岡県富士市周辺</li>
+            <li><span class="info-label">対象：</span>日本文化や抹茶に興味のある海外で長く暮らした経験のある方（テストツアーのため対象を絞っております）</li>
+            <li><span class="info-label">定員：</span>10名前後を想定。応募多数の場合抽選になります。</li>
+            <li><span class="info-label">参加費：</span>未定（およそ1万円前後の予定です。）</li>
           </ul>
 
           <h3>持ち物・服装</h3>
@@ -905,7 +755,8 @@ background-image:
           <ul>
             <li>天候や交通状況により、スケジュールや内容が変更となる場合があります。</li>
             <li>アレルギーや体調面で不安がある方は、事前にお知らせください。</li>
-            <li>工場見学や石臼体験では、安全上の指示に従ってご参加ください。</li>
+            <li>工場見学や体験では、安全上の指示に従ってご参加ください。</li>
+            <li>サイクリングは安全のため、当日の状況により距離やルートを調整する場合があります。</li>
           </ul>
 
           <div class="apply-box">
@@ -932,16 +783,8 @@ background-image:
 
 <footer>
   <div class="wrapper">
-    富士抹茶体験ツアー（仮） / 本ページは企画検討用の募集サイト案です。
+    富士抹茶体験ツアー（仮） / 本ページは企画検討用の募集サイトです。
   </div>
 </footer>
-
 </body>
 </html>
-
-
-
-
-
-
-
